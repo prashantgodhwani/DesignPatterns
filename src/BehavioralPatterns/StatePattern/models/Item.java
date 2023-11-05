@@ -1,13 +1,9 @@
 package BehavioralPatterns.StatePattern.models;
 
 public class Item {
-
     ItemType itemType;
-
     String name;
-
     int price;
-
     int id;
 
     public Item(ItemType itemType, String name, int price, int id){
