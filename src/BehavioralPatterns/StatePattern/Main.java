@@ -60,7 +60,7 @@ public class Main {
 
     }
 
-    private static void fillUpInventory(VendingMachine vendingMachine){
+    private static void fillUpInventory(VendingMachine vendingMachine) throws Exception {
         ItemShelf[] slots = vendingMachine.getInventory().getInventory();
         for (int i = 0; i < slots.length; i++) {
             Item newItem = new Item();
@@ -77,8 +77,7 @@ public class Main {
                 newItem.setItemType(ItemType.ENERGY_DRINK);
                 newItem.setPrice(7);
             }
-            slots[i].setItem(newItem);
-            slots[i].setSoldOut(false);
+            vendingMachine.getInventory().addItem(newItem, slots[i].getShelfId());
         }
     }
 
